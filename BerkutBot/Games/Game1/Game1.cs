@@ -20,7 +20,7 @@ namespace BerkutBot.Games.Game1
     {
         private readonly IGame1AnswerFactory _game1AnswerFactory;
         private readonly IUpdateMessageFactory _updateMessageFatory;
-        private Message? _processingMessage;
+        private Message _processingMessage;
 
         public Game1(IGame1AnswerFactory game1AnswerFactory, IUpdateMessageFactory updateMessageFatory)
         {

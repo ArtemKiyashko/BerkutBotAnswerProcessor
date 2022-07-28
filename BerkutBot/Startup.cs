@@ -23,7 +23,7 @@ namespace BerkutBot
     {
         private IConfigurationRoot _functionConfig;
 
-        public override async void Configure(IFunctionsHostBuilder builder)
+        public override void Configure(IFunctionsHostBuilder builder)
         {
             _functionConfig = new ConfigurationBuilder()
                 .AddEnvironmentVariables()
