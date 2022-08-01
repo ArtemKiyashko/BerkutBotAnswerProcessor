@@ -9,7 +9,6 @@ namespace BerkutBot.Options
     public class BotOptions
     {
         public string Token { get; set; }
-        public Uri WebHookUrl { get; set; }
         public string StorageBlobsConnectionString { get; set; }
     }
 }

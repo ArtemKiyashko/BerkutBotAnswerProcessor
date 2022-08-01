@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
-using BerkutBot.Games.Game1.Options;
 using BerkutBot.Options;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;

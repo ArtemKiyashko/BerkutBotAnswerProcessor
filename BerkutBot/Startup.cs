@@ -1,7 +1,6 @@
 ﻿using Azure.Storage.Blobs;
 using BerkutBot.Games.Game1;
 using BerkutBot.Games.Game1.Infrastructure;
-using BerkutBot.Games.Game1.Options;
 using BerkutBot.Options;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
@@ -31,7 +30,6 @@ namespace BerkutBot
 
 
             builder.Services.Configure<BotOptions>(_functionConfig.GetSection("BotOptions"));
-            builder.Services.Configure<Game1Options>(_functionConfig.GetSection("Game1Options"));
             builder.Services.AddLogging();
             builder.Services.AddSingleton<ITelegramBotClient, TelegramBotClient>(provider => 
                 new TelegramBotClient(provider.GetService<IOptions<BotOptions>>().Value.Token));
