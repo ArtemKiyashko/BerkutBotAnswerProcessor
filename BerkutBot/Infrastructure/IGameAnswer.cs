@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Telegram.Bot.Types;
 
-namespace BerkutBot.Games.Game1
+namespace BerkutBot.Infrastructure
 {
-    public interface IGame1Answer
+    public interface IGameAnswer
     {
         public Func<string, bool> Intent { get; }
         public int Order { get; }

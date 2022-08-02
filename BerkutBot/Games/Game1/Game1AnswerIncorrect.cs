@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+using BerkutBot.Infrastructure;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
 namespace BerkutBot.Games.Game1
 {
-    public class Game1AnswerIncorrect : IGame1Answer
+    public class Game1AnswerIncorrect : IGameAnswer
     {
         private const string REPLY_TEXT = "это не то, чего я ожидал((";
         private readonly ITelegramBotClient _telegramBotClient;

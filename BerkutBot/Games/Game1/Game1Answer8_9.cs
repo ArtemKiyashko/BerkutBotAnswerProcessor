@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
+using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
@@ -9,7 +10,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace BerkutBot.Games.Game1
 {
-    public class Game1Answer8_9 : IGame1Answer
+    public class Game1Answer8_9 : IGameAnswer
     {
         private const string REPLY_TEXT = "Song sent";
         private const string SONG_CONTAINER = "public";
@@ -29,7 +30,7 @@ namespace BerkutBot.Games.Game1
 
         public int Order => 4;
 
-        Func<string, bool> IGame1Answer.Intent
+        Func<string, bool> IGameAnswer.Intent
             => (string text)
             => !string.IsNullOrEmpty(text) && Double.TryParse(text.Replace(',', '.'), out double result) && ANSWER.Equals(result);
 

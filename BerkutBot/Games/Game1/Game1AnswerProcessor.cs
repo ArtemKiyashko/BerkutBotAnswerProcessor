@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using BerkutBot.Games.Game1.Infrastructure;
 using BerkutBot.Helpers;
+using BerkutBot.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
@@ -12,11 +13,11 @@ namespace BerkutBot.Games.Game1
 {
     public class Game1AnswerProcessor
     {
-        private readonly IGame1AnswerFactory _game1AnswerFactory;
+        private readonly IGameAnswerFactory _gameAnswerFactory;
 
-        public Game1AnswerProcessor(IGame1AnswerFactory game1AnswerFactory)
+        public Game1AnswerProcessor(IGameAnswerFactory game1AnswerFactory)
         {
-            _game1AnswerFactory = game1AnswerFactory;
+            _gameAnswerFactory = game1AnswerFactory;
         }
 
         [FunctionName("Game1AnswerProcessor")]
@@ -24,9 +25,9 @@ namespace BerkutBot.Games.Game1
         {
             log.LogInformation($"Message received: {tgMessage.ToJson()}");
 
-            IGame1Answer game1Answer = _game1AnswerFactory.GetInstance(tgMessage);
+            IGameAnswer gameAnswer = _gameAnswerFactory.GetInstance(tgMessage);
 
-            string resultString = await game1Answer.Reply(tgMessage);
+            string resultString = await gameAnswer.Reply(tgMessage);
             log.LogInformation($"Response sent: {resultString}");
         }
     }

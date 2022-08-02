@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
+using BerkutBot.Infrastructure;
 using BerkutBot.Options;
 using Microsoft.Extensions.Options;
 using Telegram.Bot;
@@ -11,7 +12,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace BerkutBot.Games.Game1
 {
-    public class Game1AnswerRally : IGame1Answer
+    public class Game1AnswerRally : IGameAnswer
     {
         private const string REPLY_TEXT = "От памятника выдвигайтесь в сторону ближайшего кругового движения\n--> 300м прямо поворот направо\n--> 1550м прямо поворот направо\n--> 550м прямо разворот на круговом движении\n--> едем 900м после поворот направо\n--> 800м прямо и поворот в карман\n--> 300м по карману";
         private const string ANSWER = "rally";
@@ -27,7 +28,7 @@ namespace BerkutBot.Games.Game1
             _blobServiceClient = blobServiceClient;
         }
 
-        Func<string, bool> IGame1Answer.Intent => (string text) => ANSWER.Equals(text, StringComparison.OrdinalIgnoreCase);
+        Func<string, bool> IGameAnswer.Intent => (string text) => ANSWER.Equals(text, StringComparison.OrdinalIgnoreCase);
 
         public int Order => 1;
 

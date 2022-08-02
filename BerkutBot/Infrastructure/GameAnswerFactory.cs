@@ -6,20 +6,20 @@ using Microsoft.Extensions.Options;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace BerkutBot.Games.Game1.Infrastructure
+namespace BerkutBot.Infrastructure
 {
-    public class Game1AnswerFactory : IGame1AnswerFactory
+    public class GameAnswerFactory : IGameAnswerFactory
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly IEnumerable<IGame1Answer> _game1Answers;
+        private readonly IEnumerable<IGameAnswer> _game1Answers;
 
-        public Game1AnswerFactory(IServiceProvider serviceProvider, IEnumerable<IGame1Answer> game1Answers)
+        public GameAnswerFactory(IServiceProvider serviceProvider, IEnumerable<IGameAnswer> game1Answers)
         {
             _serviceProvider = serviceProvider;
             _game1Answers = game1Answers;
         }
 
-        public IGame1Answer GetInstance(Message message)
+        public IGameAnswer GetInstance(Message message)
             => _game1Answers.OrderBy(answ => answ.Order).First(answ => answ.Intent(message.Text));
     }
 }

@@ -1,8 +1,11 @@
-﻿using Azure.Storage.Blobs;
+﻿using Azure.Identity;
+using Azure.Storage.Blobs;
 using BerkutBot.Games.Game1;
 using BerkutBot.Games.Game1.Infrastructure;
+using BerkutBot.Infrastructure;
 using BerkutBot.Options;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+using Microsoft.Extensions.Azure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
@@ -32,12 +35,13 @@ namespace BerkutBot
             builder.Services.Configure<BotOptions>(_functionConfig.GetSection("BotOptions"));
             builder.Services.AddLogging();
             builder.Services.AddSingleton<ITelegramBotClient, TelegramBotClient>(provider => 
-                new TelegramBotClient(provider.GetService<IOptions<BotOptions>>().Value.Token));
+                new TelegramBotClient(provider.GetRequiredService<IOptions<BotOptions>>().Value.Token));
 
-            builder.Services.AddSingleton<BlobServiceClient>(provider => {
-                BotOptions options = provider.GetRequiredService <IOptions<BotOptions>>().Value;
-                return new BlobServiceClient(options.StorageBlobsConnectionString);
+            builder.Services.AddAzureClients(clients => {
+                clients.UseCredential(new DefaultAzureCredential());
+                clients.AddBlobServiceClient(_functionConfig.GetSection("Storage"));
             });
+            builder.Services.AddSingleton<IGameAnswerFactory, GameAnswerFactory>();
             builder.Services.AddGame1Services();
         }
     }

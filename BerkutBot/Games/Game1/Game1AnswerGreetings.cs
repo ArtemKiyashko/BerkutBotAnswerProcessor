@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
+using BerkutBot.Infrastructure;
 using BerkutBot.Options;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -9,7 +10,7 @@ using Telegram.Bot.Types;
 
 namespace BerkutBot.Games.Game1
 {
-    public class Game1AnswerGreetings : IGame1Answer
+    public class Game1AnswerGreetings : IGameAnswer
     {
         private const string REPLY_TEXT = "Video sent";
         private const string VIDEO_CONTAINER = "public";

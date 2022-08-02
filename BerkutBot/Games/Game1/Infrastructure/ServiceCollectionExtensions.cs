@@ -1,4 +1,5 @@
 ﻿using System;
+using BerkutBot.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BerkutBot.Games.Game1.Infrastructure
@@ -7,12 +8,11 @@ namespace BerkutBot.Games.Game1.Infrastructure
     {
         public static IServiceCollection AddGame1Services(this IServiceCollection services)
         {
-            services.AddSingleton<IGame1AnswerFactory, Game1AnswerFactory>();
-            services.AddTransient<IGame1Answer, Game1Answer8_9>();
-            services.AddTransient<IGame1Answer, Game1AnswerRally>();
-            services.AddTransient<IGame1Answer, Game1AnswerIncorrect>();
-            services.AddTransient<IGame1Answer, Game1AnswerGreetings>();
-            services.AddSingleton<IUpdateMessageFactory, UpdateMessageFactory>();
+
+            services.AddTransient<IGameAnswer, Game1Answer8_9>();
+            services.AddTransient<IGameAnswer, Game1AnswerRally>();
+            services.AddTransient<IGameAnswer, Game1AnswerIncorrect>();
+            services.AddTransient<IGameAnswer, Game1AnswerGreetings>();
             return services;
         }
     }
