@@ -21,6 +21,8 @@
     <None Remove="Helpers\" />
     <None Remove="Microsoft.Extensions.Azure" />
     <None Remove="Infrastructure\" />
+    <None Remove="Games\Game2\" />
+    <None Remove="Games\Game2\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -37,5 +39,7 @@
     <Folder Include="Games\Game1\Infrastructure\" />
     <Folder Include="Helpers\" />
     <Folder Include="Infrastructure\" />
+    <Folder Include="Games\Game2\" />
+    <Folder Include="Games\Game2\Infrastructure\" />
   </ItemGroup>
 </Project>
