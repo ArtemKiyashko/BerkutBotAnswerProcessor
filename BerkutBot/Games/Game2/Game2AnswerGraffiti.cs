@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Azure.Storage.Blobs;
 using BerkutBot.Infrastructure;
@@ -12,9 +14,8 @@ namespace BerkutBot.Games.Game2
 	{
         private const string REPLY_TEXT = "Graffiti answer sent";
         private const string CONTAINER = "public";
-        private const string PICTURE_BLOB = "image.png";
-        private const string MUSIC_BLOB = "!.mp3";
-        private const string ANSWER = "graffiti";
+        private const string PICTURE_BLOB = "img1.png";
+        private readonly HashSet<string> _answerSet = new() { "graffiti", "граффити" };
 
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly BlobServiceClient _blobServiceClient;
@@ -27,25 +28,22 @@ namespace BerkutBot.Games.Game2
             _logger = logger;
         }
 
-        public Func<string, bool> Intent => text => ANSWER.Equals(text, StringComparison.OrdinalIgnoreCase);
+        public Func<string, bool> Intent =>
+            text =>
+            _answerSet.Any(ans => ans.Equals(text, StringComparison.OrdinalIgnoreCase));
 
-        public int Order => 3;
+        public int Order => 5;
 
         public async Task<string> Reply(Message message)
         {
             BlobContainerClient container = _blobServiceClient.GetBlobContainerClient(CONTAINER);
             BlobClient picture = container.GetBlobClient(PICTURE_BLOB);
-            BlobClient music = container.GetBlobClient(MUSIC_BLOB);
 
             try
             {
                 await _telegramBotClient.SendPhotoAsync(
                     chatId: message.Chat.Id,
-                    photo: picture.Uri.AbsoluteUri);
-
-                await _telegramBotClient.SendAudioAsync(
-                    chatId: message.Chat.Id,
-                    audio: music.Uri.AbsoluteUri,
+                    photo: picture.Uri.AbsoluteUri,
                     replyToMessageId: message.MessageId);
             }
             catch (Exception ex)
