@@ -1,6 +1,5 @@
 ﻿using System;
 using Azure.Storage.Blobs;
-using BerkutBot.Games.Game1;
 using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
 using Telegram.Bot;
@@ -18,9 +17,9 @@ namespace BerkutBot.Games.Game2
 
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly BlobServiceClient _blobServiceClient;
-        private readonly ILogger<Game1AnswerGreetings> _logger;
+        private readonly ILogger<Game2AnswerGreetings> _logger;
 
-        public Game2AnswerGreetings(ITelegramBotClient telegramBotClient, BlobServiceClient blobServiceClient, ILogger<Game1AnswerGreetings> logger)
+        public Game2AnswerGreetings(ITelegramBotClient telegramBotClient, BlobServiceClient blobServiceClient, ILogger<Game2AnswerGreetings> logger)
         {
             _telegramBotClient = telegramBotClient;
             _blobServiceClient = blobServiceClient;
@@ -32,7 +31,7 @@ namespace BerkutBot.Games.Game2
         public int Order => 2;
 
         private bool FormatMessage(string text)
-            => !string.IsNullOrEmpty(text) && text.Replace("/", "").ToLower().Equals(ANSWER, StringComparison.OrdinalIgnoreCase);
+            => !string.IsNullOrEmpty(text) && text.Replace("/", "").Equals(ANSWER, StringComparison.OrdinalIgnoreCase);
 
         public async Task<string> Reply(Message message)
         {

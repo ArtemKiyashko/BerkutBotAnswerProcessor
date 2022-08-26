@@ -9,6 +9,8 @@ namespace BerkutBot.Games.Game2.Infrastructure
         {
             services.AddTransient<IGameAnswer, Game2AnswerIncorrect>();
             services.AddTransient<IGameAnswer, Game2AnswerGreetings>();
+            services.AddTransient<IGameAnswer, Game2AnswerLondon>();
+            services.AddTransient<IGameAnswer, Game2AnswerWhiskey>();
             return services;
         }
     }
