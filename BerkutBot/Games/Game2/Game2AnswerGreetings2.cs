@@ -8,19 +8,21 @@ using Telegram.Bot.Types;
 
 namespace BerkutBot.Games.Game2
 {
-	public class Game2AnswerGreetings : IGameAnswer
+	public class Game2AnswerGreetings2 : IGameAnswer
 	{
-        private const string REPLY_TEXT = "Короче, {0}, я тебя спас и в благородство играть не буду: выполнишь для меня пару заданий — и мы в расчете." +
-            "\nЗаодно посмотрим, как быстро у тебя башка после амнезии прояснится. А по твоей теме постараюсь разузнать." +
-            "\nХрен его знает, на кой ляд тебе этот Беркут сдался, но скоро ты узнаешь, откуда начнется приключение...";
+        private const string REPLY_TEXT = "Picture sent";
+        private const string PICTURE_CONTAINER = "public";
+        private const string PICTURE_BLOB = "HogwartsExpress.jpg";
         private const string ANSWER = "start";
 
         private readonly ITelegramBotClient _telegramBotClient;
+        private readonly BlobServiceClient _blobServiceClient;
         private readonly ILogger<Game2AnswerGreetings> _logger;
 
-        public Game2AnswerGreetings(ITelegramBotClient telegramBotClient, ILogger<Game2AnswerGreetings> logger)
+        public Game2AnswerGreetings2(ITelegramBotClient telegramBotClient, BlobServiceClient blobServiceClient, ILogger<Game2AnswerGreetings> logger)
         {
             _telegramBotClient = telegramBotClient;
+            _blobServiceClient = blobServiceClient;
             _logger = logger;
         }
 
@@ -33,12 +35,15 @@ namespace BerkutBot.Games.Game2
 
         public async Task<string> Reply(Message message)
         {
+            BlobContainerClient container = _blobServiceClient.GetBlobContainerClient(PICTURE_CONTAINER);
+            BlobClient blob = container.GetBlobClient(PICTURE_BLOB);
+
             try
             {
-                var replyFormatted = string.Format(REPLY_TEXT, message.From.FirstName ?? message.From.Username);
-                await _telegramBotClient.SendTextMessageAsync(
-                    message.Chat.Id,
-                    text: replyFormatted);
+                await _telegramBotClient.SendPhotoAsync(
+                    chatId: message.Chat.Id,
+                    photo: blob.Uri.AbsoluteUri);
+
             }
             catch (Exception ex)
             {
