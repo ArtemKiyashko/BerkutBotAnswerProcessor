@@ -5,14 +5,17 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using BerkutBot.Infrastructure;
 using Telegram.Bot.Types;
+using System.Reflection.Metadata;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace BerkutBot.Games.Game2
 {
 	public class Game2AnswerGreetings2 : IGameAnswer
 	{
-        private const string REPLY_TEXT = "Picture sent";
+        private const string REPLY_TEXT = "Назови мне это место";
         private const string PICTURE_CONTAINER = "public";
-        private const string PICTURE_BLOB = "HogwartsExpress.jpg";
+        private const string PICTURE_BLOB_0 = "vokzal1_1.jpg";
+        private const string PICTURE_BLOB_1 = "HogwartsExpress.jpg";
         private const string ANSWER = "start";
 
         private readonly ITelegramBotClient _telegramBotClient;
@@ -36,19 +39,25 @@ namespace BerkutBot.Games.Game2
         public async Task<string> Reply(Message message)
         {
             BlobContainerClient container = _blobServiceClient.GetBlobContainerClient(PICTURE_CONTAINER);
-            BlobClient blob = container.GetBlobClient(PICTURE_BLOB);
+            BlobClient blob0 = container.GetBlobClient(PICTURE_BLOB_0);
+            BlobClient blob1 = container.GetBlobClient(PICTURE_BLOB_1);
 
+            var album = new IAlbumInputMedia[]
+            {
+                new InputMediaPhoto(blob0.Uri.AbsoluteUri),
+                new InputMediaPhoto(blob1.Uri.AbsoluteUri) { Caption = REPLY_TEXT },
+            };
+            
             try
             {
-                await _telegramBotClient.SendPhotoAsync(
+                await _telegramBotClient.SendMediaGroupAsync(
                     chatId: message.Chat.Id,
-                    photo: blob.Uri.AbsoluteUri);
-
+                    media: album);
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Cannot send picture: {ex.Message}", ex);
-                return $"Cannot send picture: {ex.Message}";
+                _logger.LogError($"Cannot send pictureы: {ex.Message}", ex);
+                return $"Cannot send pictureы: {ex.Message}";
             }
             return REPLY_TEXT;
         }

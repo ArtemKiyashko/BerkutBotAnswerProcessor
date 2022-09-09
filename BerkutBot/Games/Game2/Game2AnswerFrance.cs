@@ -7,22 +7,22 @@ using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InputFiles;
 
 namespace BerkutBot.Games.Game2
 {
-	public class Game2AnswerLondon : IGameAnswer
+	public class Game2AnswerFrance : IGameAnswer
 	{
-        private const string REPLY_TEXT = "London answer sent";
+        private const string ANSWER_ID = "France answer";
+        private const string REPLY_TEXT = $"{ANSWER_ID} sent";
         private const string CONTAINER = "public";
-        private const string MUSIC_BLOB = "Italy.mp3";
-        private readonly HashSet<string> _answerSet = new() { "италия", "italy" };
+        private const string PICTURE_BLOB = "france.jpg";
+        private readonly HashSet<string> _answerSet = new() { "france", "франция" };
 
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly BlobServiceClient _blobServiceClient;
-        private readonly ILogger<Game2AnswerLondon> _logger;
+        private readonly ILogger<Game2AnswerFrance> _logger;
 
-        public Game2AnswerLondon(ITelegramBotClient telegramBotClient, BlobServiceClient blobServiceClient, ILogger<Game2AnswerLondon> logger)
+        public Game2AnswerFrance(ITelegramBotClient telegramBotClient, BlobServiceClient blobServiceClient, ILogger<Game2AnswerFrance> logger)
 		{
             _telegramBotClient = telegramBotClient;
             _blobServiceClient = blobServiceClient;
@@ -33,25 +33,24 @@ namespace BerkutBot.Games.Game2
             text =>
             _answerSet.Any(ans => ans.Equals(text, StringComparison.OrdinalIgnoreCase));
 
-        public int Order => 3;
+        public int Order => 11;
 
         public async Task<string> Reply(Message message)
         {
             BlobContainerClient container = _blobServiceClient.GetBlobContainerClient(CONTAINER);
-            BlobClient music = container.GetBlobClient(MUSIC_BLOB);
+            BlobClient picture = container.GetBlobClient(PICTURE_BLOB);
 
             try
             {
-                await _telegramBotClient.SendVoiceAsync(
+                await _telegramBotClient.SendPhotoAsync(
                     chatId: message.Chat.Id,
-                    voice: music.Uri.AbsoluteUri,
-                    replyToMessageId: message.MessageId,
-                    caption: "Ну, здравствуй");
+                    photo: picture.Uri.AbsoluteUri,
+                    replyToMessageId: message.MessageId);
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Cannot send london answer: {ex.Message}", ex);
-                return $"Cannot send london answer: {ex.Message}";
+                _logger.LogError($"Cannot send {ANSWER_ID}: {ex.Message}", ex);
+                return $"Cannot send {ANSWER_ID}: {ex.Message}";
             }
             return REPLY_TEXT;
         }

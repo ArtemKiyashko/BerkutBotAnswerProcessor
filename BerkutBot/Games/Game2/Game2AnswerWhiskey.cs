@@ -4,15 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using Telegram.Bot;
 using Telegram.Bot.Types;
+using Telegram.Bot.Types.ReplyMarkups;
 
 namespace BerkutBot.Games.Game2
 {
 	public class Game2AnswerWhiskey : IGameAnswer
 	{
         private const string REPLY_TEXT = "A bheil thu fhathast an seo, poca leathair? Coimhead airson cruth-atharrachaidh faisg air a’ chiad taigh!";
-        private readonly HashSet<string> _answerSet = new() { "whiskey", "виски" };
+        private readonly HashSet<string> _answerSet = new() { "тибет", "tibet" };
 
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly ILogger<Game2AnswerWhiskey> _logger;
@@ -31,7 +33,6 @@ namespace BerkutBot.Games.Game2
 
         public async Task<string> Reply(Message message)
         {
-
             try
             {
                 await _telegramBotClient.SendTextMessageAsync(
