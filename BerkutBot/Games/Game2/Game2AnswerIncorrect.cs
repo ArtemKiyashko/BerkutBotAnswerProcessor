@@ -8,7 +8,7 @@ namespace BerkutBot.Games.Game2
 {
 	public class Game2AnswerIncorrect : IGameAnswer
 	{
-        private const string REPLY_TEXT = "Если на необитаемом острове упало бы дерево, издавался ли там звук? Не знаю. Как и ответа на твой вопрос. Попробуй что-то другое.";
+        private const string REPLY_TEXT = "Сейчас нет активных игр. Мы дадим вам знать, когда начнется следующая. Оставайтесь на связи и не удаляйте этот чат, чтобы быть в курсе событий ;-)";
         private readonly ITelegramBotClient _telegramBotClient;
 
         public Game2AnswerIncorrect(ITelegramBotClient telegramBotClient)
