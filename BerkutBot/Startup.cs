@@ -1,5 +1,5 @@
 ﻿using Azure.Identity;
-using BerkutBot.Games.Game2.Infrastructure;
+using BerkutBot.Games.Game3.Infrastructure;
 using BerkutBot.Infrastructure;
 using BerkutBot.Options;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
@@ -34,7 +34,7 @@ namespace BerkutBot
                 clients.AddBlobServiceClient(_functionConfig.GetSection("Storage"));
             });
             builder.Services.AddSingleton<IGameAnswerFactory, GameAnswerFactory>();
-            builder.Services.AddGame2Services();
+            builder.Services.AddGame3Services();
         }
     }
 }
