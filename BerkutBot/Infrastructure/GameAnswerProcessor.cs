@@ -16,7 +16,7 @@ namespace BerkutBot.Infrastructure
         }
 
         [FunctionName("GameAnswerProcessor")]
-        public async Task Run([ServiceBusTrigger("tgincomemessages", "game", Connection = "ServiceBusConnection", IsSessionsEnabled = true)] Message tgMessage, ILogger log)
+        public async Task Run([ServiceBusTrigger("textmessages", "answerprocessor", Connection = "ServiceBusConnection", IsSessionsEnabled = true)] Message tgMessage, ILogger log)
         {
             log.LogInformation($"Message received: {tgMessage.ToJson()}");
 
