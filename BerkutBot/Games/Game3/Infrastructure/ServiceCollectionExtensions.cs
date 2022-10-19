@@ -13,6 +13,7 @@ namespace BerkutBot.Games.Game3.Infrastructure
             services.AddTransient<IGameAnswer, Game3AnswerIncorrect>();
             services.AddTransient<IStartCommand, DefaultStartCommand>();
             services.AddTransient<IStartCommand, UnknownStartCommand>();
+            services.AddTransient<IStartCommand, AfricaStartCommand>();
             return services;
         }
     }
