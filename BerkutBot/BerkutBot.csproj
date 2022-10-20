@@ -8,7 +8,7 @@
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.3" />
     <PackageReference Include="Telegram.Bot" Version="18.0.0" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.14.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.14.1" />
     <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="5.8.0" />
     <PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.0" />
   </ItemGroup>
@@ -26,6 +26,9 @@
     <None Remove="Games\Game3\" />
     <None Remove="Games\Game3\StartCommands\" />
     <None Remove="Games\Game3\Infrastructure\" />
+    <None Remove="Games\Game4\" />
+    <None Remove="Games\Game4\Infrastructure\" />
+    <None Remove="Games\Game4\StartCommands\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -47,5 +50,8 @@
     <Folder Include="Games\Game3\" />
     <Folder Include="Games\Game3\StartCommands\" />
     <Folder Include="Games\Game3\Infrastructure\" />
+    <Folder Include="Games\Game4\" />
+    <Folder Include="Games\Game4\Infrastructure\" />
+    <Folder Include="Games\Game4\StartCommands\" />
   </ItemGroup>
 </Project>
