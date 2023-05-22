@@ -43,7 +43,7 @@ namespace BerkutBot.Games.Game2
             {
                 await _telegramBotClient.SendPhotoAsync(
                     chatId: message.Chat.Id,
-                    photo: picture.Uri.AbsoluteUri,
+                    photo: InputFile.FromUri(picture.Uri),
                     replyToMessageId: message.MessageId);
             }
             catch (Exception ex)

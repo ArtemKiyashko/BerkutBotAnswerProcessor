@@ -44,8 +44,8 @@ namespace BerkutBot.Games.Game2
 
             var album = new IAlbumInputMedia[]
             {
-                new InputMediaPhoto(blob0.Uri.AbsoluteUri),
-                new InputMediaPhoto(blob1.Uri.AbsoluteUri) { Caption = REPLY_TEXT },
+                new InputMediaPhoto(InputFile.FromUri(blob0.Uri)),
+                new InputMediaPhoto(InputFile.FromUri(blob1.Uri)) { Caption = REPLY_TEXT },
             };
             
             try

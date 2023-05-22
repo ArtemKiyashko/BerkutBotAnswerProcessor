@@ -8,7 +8,6 @@ using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InputFiles;
 
 namespace BerkutBot.Games.Game2
 {
@@ -45,7 +44,7 @@ namespace BerkutBot.Games.Game2
             {
                 await _telegramBotClient.SendVideoNoteAsync(
                     chatId: message.Chat.Id,
-                    videoNote: video.Uri.AbsoluteUri,
+                    videoNote: InputFile.FromUri(video.Uri.AbsoluteUri),
                     replyToMessageId: message.MessageId);
             }
             catch (Exception ex)

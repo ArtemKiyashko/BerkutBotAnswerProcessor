@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-
 namespace BerkutBot.Games.Game1
 {
     public class Game1AnswerVideo1 : IGameAnswer
@@ -40,7 +39,7 @@ namespace BerkutBot.Games.Game1
             {
                 await _telegramBotClient.SendVideoAsync(
                     chatId: message.Chat.Id,
-                    video: blob.Uri.AbsoluteUri,
+                    video: InputFile.FromUri(blob.Uri),
                     replyToMessageId: message.MessageId);
             }
             catch(Exception ex)

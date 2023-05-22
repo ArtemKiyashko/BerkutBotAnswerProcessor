@@ -5,7 +5,6 @@ using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InputFiles;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace BerkutBot.Games.Game1
@@ -41,7 +40,7 @@ namespace BerkutBot.Games.Game1
 
             var stream = await blob.DownloadStreamingAsync();
 
-            var file = new InputOnlineFile(stream.Value.Content);
+            var file = InputFile.FromStream(stream.Value.Content);
             try
             {
                 await _telegramBotClient.SendVoiceAsync(

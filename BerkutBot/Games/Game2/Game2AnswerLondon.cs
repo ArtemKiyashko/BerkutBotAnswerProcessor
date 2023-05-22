@@ -7,7 +7,6 @@ using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
-using Telegram.Bot.Types.InputFiles;
 
 namespace BerkutBot.Games.Game2
 {
@@ -44,7 +43,7 @@ namespace BerkutBot.Games.Game2
             {
                 await _telegramBotClient.SendVoiceAsync(
                     chatId: message.Chat.Id,
-                    voice: music.Uri.AbsoluteUri,
+                    voice: InputFile.FromUri(music.Uri.AbsoluteUri),
                     replyToMessageId: message.MessageId,
                     caption: "Ну, здравствуй");
             }

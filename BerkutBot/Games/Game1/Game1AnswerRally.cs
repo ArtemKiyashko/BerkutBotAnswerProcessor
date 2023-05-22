@@ -39,7 +39,7 @@ namespace BerkutBot.Games.Game1
 
             await _telegramBotClient.SendPhotoAsync(
                 chatId: message.Chat.Id,
-                photo: blob.Uri.AbsoluteUri,
+                photo: InputFile.FromUri(blob.Uri),
                 caption: REPLY_TEXT,
                 replyToMessageId: message.MessageId);
 

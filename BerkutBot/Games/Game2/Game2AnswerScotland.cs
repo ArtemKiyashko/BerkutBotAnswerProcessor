@@ -45,7 +45,7 @@ namespace BerkutBot.Games.Game2
             {
                 await _telegramBotClient.SendVideoAsync(
                     chatId: message.Chat.Id,
-                    video: video.Uri.AbsoluteUri,
+                    video: InputFile.FromUri(video.Uri),
                     caption: VIDEO_CAPTION);
             }
             catch (Exception ex)

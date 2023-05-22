@@ -6,11 +6,11 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Azure.Functions.Extensions" Version="1.1.0" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.1.3" />
-    <PackageReference Include="Telegram.Bot" Version="18.0.0" />
-    <PackageReference Include="Azure.Storage.Blobs" Version="12.14.1" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="5.8.0" />
-    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.0" />
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
+    <PackageReference Include="Telegram.Bot" Version="19.0.0" />
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.16.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="5.10.0" />
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.3" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Games\" />
@@ -29,6 +29,9 @@
     <None Remove="Games\Game4\" />
     <None Remove="Games\Game4\Infrastructure\" />
     <None Remove="Games\Game4\StartCommands\" />
+    <None Remove="Games\Game5\" />
+    <None Remove="Games\Game5\StartCommands\" />
+    <None Remove="Games\Game5\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -53,5 +56,8 @@
     <Folder Include="Games\Game4\" />
     <Folder Include="Games\Game4\Infrastructure\" />
     <Folder Include="Games\Game4\StartCommands\" />
+    <Folder Include="Games\Game5\" />
+    <Folder Include="Games\Game5\StartCommands\" />
+    <Folder Include="Games\Game5\Infrastructure\" />
   </ItemGroup>
 </Project>
