@@ -21,8 +21,8 @@ namespace BerkutBot.Games.Game5
         private const string ANSWER_ANDROID_TEXT = "Android: все зависит от производителя телефона. Большинство современных телефонов поддерживают фоновую работу с NFC и тут все так же как на iPhone.\n" +
             "Если метки на вашем телефоне не читают - попробуйте поискать в настройках телефона что-то связанное с NFC или бесконтактными платежами и включить это, если было выключено.\n" +
             "Обратитесь к организаторам, если у вас что-то не получается - они помогут разобраться с вашей моделью телефона!";
-        private const string ANSWER_IPHONE_PIC1_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-add-nfc-tag-reader.webp";
-        private const string ANSWER_IPHONE_PIC2_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-control-center-settings-441x480.webp";
+        private const string ANSWER_IPHONE_PIC2_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-add-nfc-tag-reader.webp";
+        private const string ANSWER_IPHONE_PIC1_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-control-center-settings-441x480.webp";
         private const string ANSWER_IPHONE_PIC3_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-nfc-tag-reader-412x480.webp";
 
         private readonly ITelegramBotClient _telegramBotClient;
