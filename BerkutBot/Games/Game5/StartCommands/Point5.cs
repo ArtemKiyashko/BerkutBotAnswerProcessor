@@ -7,14 +7,14 @@ using Telegram.Bot.Types;
 
 namespace BerkutBot.Games.Game5.StartCommands
 {
-	public class Point1 : IStartCommand
+	public class Point5 : IStartCommand
 	{
-        private const string ANSWER = "Point1_7aaa6cfc-bc2e-4b2c-9b59-88c62d52072f";
+        private const string ANSWER = "Point5_a796ec50-7548-4b61-b850-735aafc447b0";
 
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly ILogger<Point1> _logger;
+        private readonly ILogger<Point5> _logger;
 
-        public Point1(ITelegramBotClient telegramBotClient, ILogger<Point1> logger)
+        public Point5(ITelegramBotClient telegramBotClient, ILogger<Point5> logger)
 		{
             _telegramBotClient = telegramBotClient;
             _logger = logger;
@@ -22,11 +22,11 @@ namespace BerkutBot.Games.Game5.StartCommands
 
         public Func<string, bool> Intent => (string text) => ANSWER.Equals(text, StringComparison.OrdinalIgnoreCase);
 
-        public int Order => 1;
+        public int Order => 5;
 
         public async Task<string> Reply(Message message)
         {
-            await _telegramBotClient.SendLocationAsync(message.Chat.Id, 59.84886, 30.00002);
+            await _telegramBotClient.SendLocationAsync(message.Chat.Id, 60.021008, 29.688790);
             return $"{ANSWER} coordinates sent";
         }
     }

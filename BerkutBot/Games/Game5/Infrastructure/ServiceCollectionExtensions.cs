@@ -11,10 +11,16 @@ namespace BerkutBot.Games.Game5.Infrastructure
         {
             services.AddTransient<IGameAnswer, Game5IncorrectCommandHandler>();
             services.AddTransient<IGameAnswer, Game5StartCommandHandler>();
+            services.AddTransient<IGameAnswer, Game5HelpCommandHandler>();
+            services.AddTransient<IGameAnswer, Game5AnswerGo>();
             services.AddTransient<IStartCommand, DefaultStartCommand>();
             services.AddTransient<IStartCommand, UnknownStartCommand>();
             services.AddTransient<IStartCommand, Point1>();
             services.AddTransient<IStartCommand, Point2>();
+            services.AddTransient<IStartCommand, Point3>();
+            services.AddTransient<IStartCommand, Point4>();
+            services.AddTransient<IStartCommand, Point5>();
+            services.AddTransient<IStartCommand, Point6>();
             return services;
         }
     }

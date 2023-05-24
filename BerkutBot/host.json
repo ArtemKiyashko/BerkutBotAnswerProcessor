@@ -17,7 +17,9 @@
             "BerkutBot.Games.Game5.StartCommands.Point4": "Information",
             "BerkutBot.Games.Game5.StartCommands.Point5": "Information",
             "BerkutBot.Games.Game5.StartCommands.Point6": "Information",
-            "BerkutBot.Games.Game5.StartCommands.Point7": "Information"
+            "BerkutBot.Games.Game5.Game5AnswerGo": "Information",
+            "BerkutBot.Games.Game5.Game5HelpCommandHandler": "Information",
+            "BerkutBot.Games.Game5.Game5StartCommandHandler": "Information"
         }
     }
 }

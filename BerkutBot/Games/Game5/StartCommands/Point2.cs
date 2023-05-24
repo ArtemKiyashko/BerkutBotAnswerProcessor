@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BerkutBot.Games.Game3.StartCommands;
 using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
@@ -27,7 +26,7 @@ namespace BerkutBot.Games.Game5.StartCommands
 
         public async Task<string> Reply(Message message)
         {
-            await _telegramBotClient.SendLocationAsync(message.Chat.Id, 59.84886, 30.00002);
+            await _telegramBotClient.SendLocationAsync(message.Chat.Id, 59.87952, 29.86228);
             return $"{ANSWER} coordinates sent";
         }
     }
