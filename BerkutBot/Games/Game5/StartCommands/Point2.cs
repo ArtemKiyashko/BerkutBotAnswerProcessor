@@ -46,13 +46,13 @@ namespace BerkutBot.Games.Game5.StartCommands
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(1),
+                    StartTime = DateTime.UtcNow.AddMinutes(2),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Video,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game5/point_joke.mp4")
+                        MessageType = MessageType.Photo,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game5/next_point.jpg")
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);
