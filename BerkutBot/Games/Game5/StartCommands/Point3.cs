@@ -51,7 +51,7 @@ namespace BerkutBot.Games.Game5.StartCommands
                     Announcement = new Announcement
                     {
                         MessageType = MessageType.Video,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game5/point_joke.mp4")
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game5/point_joke_1.mp4")
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

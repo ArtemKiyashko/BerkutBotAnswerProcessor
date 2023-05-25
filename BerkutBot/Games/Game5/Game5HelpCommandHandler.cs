@@ -21,6 +21,7 @@ namespace BerkutBot.Games.Game5
         private const string ANSWER_ANDROID_TEXT = "Android: все зависит от производителя телефона. Большинство современных телефонов поддерживают фоновую работу с NFC и тут все так же как на iPhone.\n" +
             "Если метки на вашем телефоне не читают - попробуйте поискать в настройках телефона что-то связанное с NFC или бесконтактными платежами и включить это, если было выключено.\n" +
             "Обратитесь к организаторам, если у вас что-то не получается - они помогут разобраться с вашей моделью телефона!";
+        private const string ANSWER_TG_VERSION = "Ну и не забудь, что для корректной работы всего этого хозяйства требуется самая последняя версия Telegram! Так что обновись, пока не поздно ;-)";
         private const string ANSWER_IPHONE_PIC2_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-add-nfc-tag-reader.webp";
         private const string ANSWER_IPHONE_PIC1_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-control-center-settings-441x480.webp";
         private const string ANSWER_IPHONE_PIC3_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-nfc-tag-reader-412x480.webp";
@@ -58,6 +59,8 @@ namespace BerkutBot.Games.Game5
             await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, ANSWER_IPHONE_OLD_TEXT, parseMode: Telegram.Bot.Types.Enums.ParseMode.Markdown);
 
             await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, ANSWER_ANDROID_TEXT);
+
+            await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, ANSWER_TG_VERSION);
 
             return "Help sent";
         }
