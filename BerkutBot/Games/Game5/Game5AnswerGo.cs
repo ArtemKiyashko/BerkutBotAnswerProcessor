@@ -13,7 +13,7 @@ namespace BerkutBot.Games.Game5
 {
     public class Game5AnswerGo : IGameAnswer
     {
-        private const string REPLY_TEXT = ",fyrtnysq pfk z[n-rke,";
+        private const string REPLY_TEXT = "Cndjhysq pyfr Cnhtkmyf";
 
         private readonly HashSet<string> _answerSet = new() { "поехали", "poehali" };
         private readonly ITelegramBotClient _telegramBotClient;
