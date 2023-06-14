@@ -8,7 +8,7 @@ namespace BerkutBot.Games.Game6
 {
 	public class Game6IncorrectCommandHandler : IGameAnswer
 	{
-        private const string REPLY_TEXT = "Прости, но этот ответ мне не понятен. Попробуй начать с команды /start или используй /help если у тебя проблемы с NFC";
+        private const string REPLY_TEXT = "Все не то, чем кажется, человек. Обдумывай каждый свой шаг тщательно.";
         private readonly ITelegramBotClient _telegramBotClient;
 
         public Game6IncorrectCommandHandler(ITelegramBotClient telegramBotClient)

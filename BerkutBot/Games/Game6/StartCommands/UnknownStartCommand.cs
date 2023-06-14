@@ -8,7 +8,7 @@ namespace BerkutBot.Games.Game6.StartCommands
 {
     public class UnknownStartCommand : IStartCommand
     {
-        private const string REPLY_TEXT = "Прости, но этот ответ мне не понятен";
+        private const string REPLY_TEXT = "Все не то, чем кажется, человек. Обдумывай каждый свой шаг тщательно.";
         private readonly ITelegramBotClient _telegramBotClient;
 
         public UnknownStartCommand(ITelegramBotClient telegramBotClient)
