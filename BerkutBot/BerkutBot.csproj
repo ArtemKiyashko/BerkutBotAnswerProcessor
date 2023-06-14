@@ -9,7 +9,7 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="4.2.0" />
     <PackageReference Include="Telegram.Bot" Version="19.0.0" />
     <PackageReference Include="Azure.Storage.Blobs" Version="12.16.0" />
-    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="5.10.0" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions.ServiceBus" Version="5.11.0" />
     <PackageReference Include="Microsoft.Extensions.Azure" Version="1.6.3" />
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.16" />
   </ItemGroup>
@@ -34,6 +34,9 @@
     <None Remove="Games\Game5\StartCommands\" />
     <None Remove="Games\Game5\Infrastructure\" />
     <None Remove="Models\" />
+    <None Remove="Games\Game6\" />
+    <None Remove="Games\Game6\StartCommands\" />
+    <None Remove="Games\Game6\Infrastructure\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -62,5 +65,8 @@
     <Folder Include="Games\Game5\StartCommands\" />
     <Folder Include="Games\Game5\Infrastructure\" />
     <Folder Include="Models\" />
+    <Folder Include="Games\Game6\" />
+    <Folder Include="Games\Game6\StartCommands\" />
+    <Folder Include="Games\Game6\Infrastructure\" />
   </ItemGroup>
 </Project>
