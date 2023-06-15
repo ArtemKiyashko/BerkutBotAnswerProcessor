@@ -12,9 +12,21 @@ namespace BerkutBot.Games.Game6.Infrastructure
             services.AddTransient<IGameAnswer, Game6IncorrectCommandHandler>();
             services.AddTransient<IGameAnswer, Game6StartCommandHandler>();
             services.AddTransient<IGameAnswer, Game6HelpCommandHandler>();
-            //services.AddTransient<IGameAnswer, Game6AnswerGo>();
             services.AddTransient<IStartCommand, DefaultStartCommand>();
             services.AddTransient<IStartCommand, UnknownStartCommand>();
+
+            services.AddTransient<IStartCommand, Point1>();
+            services.AddTransient<IStartCommand, Point2>();
+            services.AddTransient<IStartCommand, Point3>();
+            services.AddTransient<IStartCommand, Point4>();
+            services.AddTransient<IStartCommand, Point5>();
+            services.AddTransient<IStartCommand, Point6>();
+            services.AddTransient<IStartCommand, Point7>();
+            services.AddTransient<IStartCommand, Point9>();
+            services.AddTransient<IStartCommand, Point10>();
+            services.AddTransient<IStartCommand, Point11>();
+
+            services.AddTransient<IGameAnswer, Game6Answer300>();
             return services;
         }
     }
