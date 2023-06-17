@@ -25,6 +25,7 @@ namespace BerkutBot.Games.Game6.Infrastructure
             services.AddTransient<IStartCommand, Point9>();
             services.AddTransient<IStartCommand, Point10>();
             services.AddTransient<IStartCommand, Point11>();
+            services.AddTransient<IStartCommand, Point12>();
 
             services.AddTransient<IGameAnswer, Game6Answer300>();
             return services;

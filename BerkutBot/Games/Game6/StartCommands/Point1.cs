@@ -52,7 +52,7 @@ namespace BerkutBot.Games.Game6.StartCommands
             {
                 var announcement1 = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(3),
+                    StartTime = DateTime.UtcNow.AddMinutes(7),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
@@ -65,7 +65,7 @@ namespace BerkutBot.Games.Game6.StartCommands
 
                 var announcement2 = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(6),
+                    StartTime = DateTime.UtcNow.AddMinutes(10),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement

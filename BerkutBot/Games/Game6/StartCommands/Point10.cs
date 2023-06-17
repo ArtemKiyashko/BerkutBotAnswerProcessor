@@ -46,7 +46,7 @@ namespace BerkutBot.Games.Game6.StartCommands
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(2),
+                    StartTime = DateTime.UtcNow.AddMinutes(5),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
