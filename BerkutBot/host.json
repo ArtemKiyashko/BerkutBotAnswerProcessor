@@ -11,20 +11,16 @@
             "isEnabled": true
         },
         "logLevel": {
-            "BerkutBot.Games.Game6.StartCommands.Point1": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point2": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point3": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point4": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point5": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point6": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point7": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point9": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point10": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point11": "Information",
-            "BerkutBot.Games.Game6.StartCommands.Point12": "Information",
-            "BerkutBot.Games.Game6.Game6HelpCommandHandler": "Information",
-            "BerkutBot.Games.Game6.Game6StartCommandHandler": "Information",
-            "BerkutBot.Games.Game6.Game6Answer300": "Information"
+            "BerkutBot.Games.Game7.StartCommands.Point1": "Information",
+            "BerkutBot.Games.Game7.StartCommands.Point2": "Information",
+            "BerkutBot.Games.Game7.StartCommands.Point3": "Information",
+            "BerkutBot.Games.Game7.StartCommands.Point4": "Information",
+            "BerkutBot.Games.Game7.StartCommands.Point5": "Information",
+            "BerkutBot.Games.Game7.StartCommands.Point6": "Information",
+            "BerkutBot.Games.Game7.StartCommands.Point7": "Information",
+            "BerkutBot.Games.Game7.StartCommands.Point8": "Information",
+            "BerkutBot.Games.Game7.Game7HelpCommandHandler": "Information",
+            "BerkutBot.Games.Game7.Game7StartCommandHandler": "Information"
         }
     }
 }
