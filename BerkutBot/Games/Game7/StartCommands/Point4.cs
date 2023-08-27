@@ -36,7 +36,7 @@ namespace BerkutBot.Games.Game7.StartCommands
         {
             await _telegramBotClient.SendPhotoAsync(message.Chat.Id, InputFile.FromUri("https://sawevprivate.blob.core.windows.net/public/Game7/g7point4.jpg"));
             await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, "🎓");
-            //await SendJoke(message);
+            await SendJoke(message);
 
             return $"{ANSWER} sent";
         }
@@ -47,13 +47,13 @@ namespace BerkutBot.Games.Game7.StartCommands
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(6),
+                    StartTime = DateTime.UtcNow.AddMinutes(7),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Video,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game6/jokes/chas_shurudish.mp4")
+                        MessageType = MessageType.Photo,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/podskazka.jpg")
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

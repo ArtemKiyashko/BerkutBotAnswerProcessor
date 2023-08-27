@@ -35,7 +35,7 @@ namespace BerkutBot.Games.Game7.StartCommands
         public async Task<string> Reply(Message message)
         {
             await _telegramBotClient.SendPhotoAsync(message.Chat.Id, InputFile.FromUri("https://sawevprivate.blob.core.windows.net/public/Game7/point_6.jpg"));
-            //await SendJoke(message);
+            await SendJoke(message);
             return $"{ANSWER} sent";
         }
 
@@ -43,19 +43,19 @@ namespace BerkutBot.Games.Game7.StartCommands
         {
             try
             {
-                var announcement = new AnnouncementRequest()
+                var announcement1 = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(5),
+                    StartTime = DateTime.UtcNow.AddMinutes(4),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Photo,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game6/jokes/smuhlevali.jpg"),
-                        Text = "Когда смухлевал и это спалили орги"
+                        MessageType = MessageType.Video,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/pohui_short.mp4"),
+                        Text = "Участники-девушки:\n\n- «Метка не читается!!! 😡»"
                     }
                 };
-                await _announcementScheduler.ScheduleAnnouncement(announcement);
+                await _announcementScheduler.ScheduleAnnouncement(announcement1);
             }
             catch (Exception ex)
             {

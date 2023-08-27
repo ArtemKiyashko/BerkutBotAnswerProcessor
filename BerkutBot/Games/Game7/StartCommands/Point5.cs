@@ -35,7 +35,7 @@ namespace BerkutBot.Games.Game7.StartCommands
         public async Task<string> Reply(Message message)
         {
             await _telegramBotClient.SendPhotoAsync(message.Chat.Id, InputFile.FromUri("https://sawevprivate.blob.core.windows.net/public/Game7/point_5.jpg"));
-            //await SendJoke(message);
+            await SendJoke(message);
             return $"{ANSWER} sent";
         }
 
@@ -51,8 +51,8 @@ namespace BerkutBot.Games.Game7.StartCommands
                     Announcement = new Announcement
                     {
                         MessageType = MessageType.Photo,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game6/jokes/nashli_metku.jpg"),
-                        Text = "Когда наконец нашли метку"
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/sovpadenie.jpg"),
+                        Text = "Встретил на точке другой экипаж"
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

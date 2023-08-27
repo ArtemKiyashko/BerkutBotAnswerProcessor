@@ -36,7 +36,7 @@ namespace BerkutBot.Games.Game7.StartCommands
         {
             await _telegramBotClient.SendLocationAsync(message.Chat.Id, 59.882645, 30.300472);
 
-            //await SendJoke(message);
+            await SendJoke(message);
 
             return $"{ANSWER} sent";
         }
@@ -47,29 +47,17 @@ namespace BerkutBot.Games.Game7.StartCommands
             {
                 var announcement1 = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(7),
-                    Chats = new List<long> { message.Chat.Id },
-                    SendToAll = false,
-                    Announcement = new Announcement
-                    {
-                        MessageType = MessageType.Voice,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game6/jokes/edesh_ne_tuda.mp3")
-                    }
-                };
-                await _announcementScheduler.ScheduleAnnouncement(announcement1);
-
-                var announcement2 = new AnnouncementRequest()
-                {
                     StartTime = DateTime.UtcNow.AddMinutes(10),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Voice,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game6/jokes/its_a_joke.mp3")
+                        MessageType = MessageType.Photo,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/game_tutorials_edit.jpg"),
+                        Text = "Когда пропустил брифинг и поехал на квест"
                     }
                 };
-                await _announcementScheduler.ScheduleAnnouncement(announcement2);
+                await _announcementScheduler.ScheduleAnnouncement(announcement1);
             }
             catch (Exception ex)
             {

@@ -35,7 +35,7 @@ namespace BerkutBot.Games.Game7.StartCommands
         public async Task<string> Reply(Message message)
         {
             await _telegramBotClient.SendTextMessageAsync(message.Chat.Id, "[ССЫЛКА](https://gazgolder.com/)\n3АЛИТ3", disableWebPagePreview: true, parseMode: ParseMode.Markdown);
-            //await SendJoke(message);
+            await SendJoke(message);
 
             return $"{ANSWER} sent";
         }
@@ -51,8 +51,9 @@ namespace BerkutBot.Games.Game7.StartCommands
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Video,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game6/jokes/na_brifinge_result.mp4")
+                        MessageType = MessageType.Photo,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/zakladka.jpg"),
+                        Text = "Орги раскидывают метки"
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);
