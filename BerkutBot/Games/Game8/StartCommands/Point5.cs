@@ -45,7 +45,7 @@ namespace BerkutBot.Games.Game8.StartCommands
             var blobContent = await blobClient.DownloadStreamingAsync();
 
             await _telegramBotClient.SendVoiceAsync(message.Chat.Id, InputFile.FromStream(blobContent.Value.Content));
-            //await SendJoke(message);
+            await SendJoke(message);
 
             return $"{ANSWER} sent";
         }
@@ -61,9 +61,8 @@ namespace BerkutBot.Games.Game8.StartCommands
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Photo,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/zakladka.jpg"),
-                        Text = "Орги раскидывают метки"
+                        MessageType = MessageType.Video,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game8/jokes/joke5.mp4")
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

@@ -16,20 +16,8 @@ namespace BerkutBot.Games.Game8
         private const string REPLY_TEXT = "Game8 begin";
 
         private readonly HashSet<string> _answerSet = new() {
-            "Беркут гони",
-            "Беркут, гони!",
-            "Беркут, гони",
-            "Беркут погнали",
-            "Буркут, погнали!",
-            "Беркут, погнали",
-            "Беркут, вперёд!",
-            "Беркут вперёд!",
-            "Беркут, вперёд",
-            "Беркут вперёд",
-            "Беркут, вперед!",
-            "Беркут вперед!",
-            "Беркут, вперед",
-            "Беркут вперед",};
+            "паста карбонара",
+            "паста карбонара!",};
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly ILogger<Game8AnswerGo> _logger;
         private readonly IAnnouncementScheduler _announcementScheduler;
