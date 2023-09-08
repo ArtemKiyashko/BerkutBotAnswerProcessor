@@ -62,7 +62,8 @@ namespace BerkutBot.Games.Game8.StartCommands
                     Announcement = new Announcement
                     {
                         MessageType = MessageType.Video,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game8/jokes/joke5.mp4")
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game8/jokes/joke5.mp4"),
+                        Text = "Наступил на подсказку"
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

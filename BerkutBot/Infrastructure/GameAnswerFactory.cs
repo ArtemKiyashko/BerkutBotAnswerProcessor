@@ -6,15 +6,15 @@ namespace BerkutBot.Infrastructure
 {
     public class GameAnswerFactory : IGameAnswerFactory
     {
-        private readonly IEnumerable<IGameAnswer> _game1Answers;
+        private readonly IEnumerable<IGameAnswer> _gameAnswers;
 
-        public GameAnswerFactory(IEnumerable<IGameAnswer> game1Answers)
+        public GameAnswerFactory(IEnumerable<IGameAnswer> gameAnswers)
         {
-            _game1Answers = game1Answers;
+            _gameAnswers = gameAnswers;
         }
 
         public IGameAnswer GetInstance(Message message)
-            => _game1Answers.OrderBy(answ => answ.Order).First(answ => answ.Intent(message.Text));
+            => _gameAnswers.OrderBy(answ => answ.Order).First(answ => answ.Intent(message.Text));
     }
 }
 
