@@ -38,7 +38,7 @@ namespace BerkutBot.Games.Game8.StartCommands
                 message.Chat.Id,
                 InputFile.FromString("https://sawevprivate.blob.core.windows.net/public/Game8/point2.jpeg"),
                 caption: "100011");
-            //await SendJoke(message);
+            await SendJoke(message);
 
             return $"{ANSWER} sent";
         }
@@ -49,14 +49,14 @@ namespace BerkutBot.Games.Game8.StartCommands
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(5),
+                    StartTime = DateTime.UtcNow.AddMinutes(Random.Shared.Next(2, 7)),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Photo,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/zakladka.jpg"),
-                        Text = "Орги раскидывают метки"
+                        MessageType = MessageType.Video,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game8/jokes/joke3.mp4"),
+                        Text = "Привез упоротого друга на брифинг"
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

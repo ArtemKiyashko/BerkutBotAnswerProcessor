@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Azure.Storage.Blobs;
 using BerkutBot.Infrastructure;
 using BerkutBot.Models;
 using Microsoft.Extensions.Logging;
@@ -11,43 +10,35 @@ using Telegram.Bot.Types.Enums;
 
 namespace BerkutBot.Games.Game8.StartCommands
 {
-	public class Point3 : IStartCommand
+	public class Point10 : IStartCommand
 	{
-        private const string ANSWER = "Point3_2e5834aa-be4b-40f2-b669-f3d02719a163";
-        private const string PUBLIC_CONTAINER = "public";
-        private const string BLOB_PATH = "Game8/point3.mp3";
+        private const string ANSWER = "Point10_c7ce089f-4eeb-4468-8c63-4947fc3c2adf";
 
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly ILogger<Point3> _logger;
+        private readonly ILogger<Point10> _logger;
         private readonly IAnnouncementScheduler _announcementScheduler;
-        private readonly BlobServiceClient _blobServiceClient;
 
-        public Point3(
+        public Point10(
             ITelegramBotClient telegramBotClient,
-            ILogger<Point3> logger,
-            IAnnouncementScheduler announcementScheduler,
-            BlobServiceClient blobServiceClient)
+            ILogger<Point10> logger,
+            IAnnouncementScheduler announcementScheduler)
 		{
             _telegramBotClient = telegramBotClient;
             _logger = logger;
             _announcementScheduler = announcementScheduler;
-            _blobServiceClient = blobServiceClient;
         }
 
         public Func<string, bool> Intent => (string text) => ANSWER.Equals(text, StringComparison.OrdinalIgnoreCase);
 
-        public int Order => 3;
+        public int Order => 10;
 
         public async Task<string> Reply(Message message)
         {
-            var containerClient = _blobServiceClient.GetBlobContainerClient(PUBLIC_CONTAINER);
-            var blobClient = containerClient.GetBlobClient(BLOB_PATH);
-            var blobContent = await blobClient.DownloadStreamingAsync();
-
-            await _telegramBotClient.SendVoiceAsync(
+            await _telegramBotClient.SendPhotoAsync(
                 message.Chat.Id,
-                InputFile.FromStream(blobContent.Value.Content));
-            await SendJoke(message);
+                InputFile.FromString("https://sawevprivate.blob.core.windows.net/public/Game8/point10.jpg"),
+                caption: "https://www.musicca.com/ru/pianino");
+            //await SendJoke(message);
 
             return $"{ANSWER} sent";
         }
@@ -63,9 +54,9 @@ namespace BerkutBot.Games.Game8.StartCommands
                     SendToAll = false,
                     Announcement = new Announcement
                     {
-                        MessageType = MessageType.Video,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game8/jokes/joke4.mp4"),
-                        Text = "Слушаю, как орги объясняют какие будут бонусные"
+                        MessageType = MessageType.Photo,
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/zakladka.jpg"),
+                        Text = "Орги раскидывают метки"
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

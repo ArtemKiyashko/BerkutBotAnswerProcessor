@@ -49,7 +49,7 @@ namespace BerkutBot.Games.Game8.StartCommands
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(5),
+                    StartTime = DateTime.UtcNow.AddMinutes(Random.Shared.Next(2, 7)),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement

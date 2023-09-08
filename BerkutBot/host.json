@@ -11,15 +11,18 @@
             "isEnabled": true
         },
         "logLevel": {
-            "BerkutBot.Games.Game7.StartCommands.Point1": "Information",
-            "BerkutBot.Games.Game7.StartCommands.Point2": "Information",
-            "BerkutBot.Games.Game7.StartCommands.Point3": "Information",
-            "BerkutBot.Games.Game7.StartCommands.Point4": "Information",
-            "BerkutBot.Games.Game7.StartCommands.Point5": "Information",
-            "BerkutBot.Games.Game7.StartCommands.Point6": "Information",
-            "BerkutBot.Games.Game7.Game7AnswerGo": "Information",
-            "BerkutBot.Games.Game7.Game7HelpCommandHandler": "Information",
-            "BerkutBot.Games.Game7.Game7StartCommandHandler": "Information"
+            "BerkutBot.Games.Game8.StartCommands.Point10": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point2": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point3": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point4": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point5": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point6": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point7": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point8": "Information",
+            "BerkutBot.Games.Game8.StartCommands.Point9": "Information",
+            "BerkutBot.Games.Game8.Game8AnswerGo": "Information",
+            "BerkutBot.Games.Game8.Game8HelpCommandHandler": "Information",
+            "BerkutBot.Games.Game8.Game8StartCommandHandler": "Information"
         }
     }
 }

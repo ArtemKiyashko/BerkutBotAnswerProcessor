@@ -17,6 +17,14 @@ namespace BerkutBot.Games.Game8.Infrastructure
 
 
             services.AddTransient<IStartCommand, Point2>();
+            services.AddTransient<IStartCommand, Point3>();
+            services.AddTransient<IStartCommand, Point4>();
+            services.AddTransient<IStartCommand, Point5>();
+            services.AddTransient<IStartCommand, Point6>();
+            services.AddTransient<IStartCommand, Point7>();
+            services.AddTransient<IStartCommand, Point8>();
+            services.AddTransient<IStartCommand, Point9>();
+            services.AddTransient<IStartCommand, Point10>();
             services.AddTransient<IStartCommand, TestPoint>();
 
             return services;

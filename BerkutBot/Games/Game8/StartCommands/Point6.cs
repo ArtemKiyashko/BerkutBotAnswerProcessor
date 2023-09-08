@@ -34,7 +34,7 @@ namespace BerkutBot.Games.Game8.StartCommands
 
         public async Task<string> Reply(Message message)
         {
-            await _telegramBotClient.SendPhotoAsync(message.Chat.Id, InputFile.FromString("https://sawevprivate.blob.core.windows.net/public/Game8/point6.png"));
+            await _telegramBotClient.SendPhotoAsync(message.Chat.Id, InputFile.FromString("https://sawevprivate.blob.core.windows.net/public/Game8/point6_1.png"));
             //await SendJoke(message);
 
             return $"{ANSWER} sent";
@@ -46,7 +46,7 @@ namespace BerkutBot.Games.Game8.StartCommands
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(5),
+                    StartTime = DateTime.UtcNow.AddMinutes(Random.Shared.Next(2, 7)),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement

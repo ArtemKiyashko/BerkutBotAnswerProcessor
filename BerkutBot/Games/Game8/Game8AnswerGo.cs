@@ -13,9 +13,23 @@ namespace BerkutBot.Games.Game8
 {
     public class Game8AnswerGo : IGameAnswer
     {
-        private const string REPLY_TEXT = "Park in ✌️ phone tan";
+        private const string REPLY_TEXT = "Game8 begin";
 
-        private readonly HashSet<string> _answerSet = new() { "Беркут гони", "Беркут, гони!", "Беркут, гони", "Беркут погнали", "Буркут, погнали!", "Беркут, погнали" };
+        private readonly HashSet<string> _answerSet = new() {
+            "Беркут гони",
+            "Беркут, гони!",
+            "Беркут, гони",
+            "Беркут погнали",
+            "Буркут, погнали!",
+            "Беркут, погнали",
+            "Беркут, вперёд!",
+            "Беркут вперёд!",
+            "Беркут, вперёд",
+            "Беркут вперёд",
+            "Беркут, вперед!",
+            "Беркут вперед!",
+            "Беркут, вперед",
+            "Беркут вперед",};
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly ILogger<Game8AnswerGo> _logger;
         private readonly IAnnouncementScheduler _announcementScheduler;
@@ -38,9 +52,9 @@ namespace BerkutBot.Games.Game8
 
         public async Task<string> Reply(Message message)
         {
-            await _telegramBotClient.SendTextMessageAsync(
+            await _telegramBotClient.SendVideoAsync(
                 chatId: message.Chat.Id,
-                text: REPLY_TEXT,
+                InputFile.FromString("https://sawevprivate.blob.core.windows.net/public/Game8/game8start.mp4"),
                 replyToMessageId: message.MessageId);
 
             //await SendJoke(message);
@@ -54,7 +68,7 @@ namespace BerkutBot.Games.Game8
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddMinutes(3),
+                    StartTime = DateTime.UtcNow.AddMinutes(Random.Shared.Next(2, 7)),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement
