@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BerkutBot.Infrastructure;
 using Telegram.Bot.Types;
 
-namespace BerkutBot.Games.Game9
+namespace BerkutBot.Infrastructure
 {
-    public class Game9StartCommandHandler : IGameAnswer
+    public class GameStartCommandHandler : IGameAnswer
     {
         private const string COMMAND = "/start";
         private string COMMAND_NOT_FOUND_REPLY = "Command [{0}]. No handler registered for argument [{1}]";
         private readonly IEnumerable<IStartCommand> _startCommands;
 
-        public Game9StartCommandHandler(IEnumerable<IStartCommand> startCommands)
+        public GameStartCommandHandler(IEnumerable<IStartCommand> startCommands)
         {
             _startCommands = startCommands;
         }

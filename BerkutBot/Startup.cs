@@ -49,8 +49,8 @@ namespace BerkutBot
                 .AddPolicyHandler(GetRetryPolicy());
 
             builder.Services.AddSingleton<IGameAnswerFactory, GameAnswerFactory>();
-            builder.Services.AddGame9Services();
-            //builder.Services.AddSingleton<IGameAnswer, GameAnswerEmpty>();
+            builder.Services.AddGameCommonServices();
+            //builder.Services.AddGame9Services();
         }
 
         static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()

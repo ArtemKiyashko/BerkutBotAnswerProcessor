@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BerkutBot.Infrastructure;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace BerkutBot.Games.Game9.StartCommands
+namespace BerkutBot.Infrastructure
 {
-    public class UnknownStartCommand : IStartCommand
+    public class GameUnknownStartCommand : IStartCommand
     {
         private const string REPLY_TEXT = "Ну бред жи, ну?";
         private readonly ITelegramBotClient _telegramBotClient;
 
-        public UnknownStartCommand(ITelegramBotClient telegramBotClient)
+        public GameUnknownStartCommand(ITelegramBotClient telegramBotClient)
         {
             _telegramBotClient = telegramBotClient;
         }

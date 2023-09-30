@@ -38,7 +38,7 @@ namespace BerkutBot.Games.Game9.StartCommands
                 message.Chat.Id,
                 InputFile.FromString("https://sawevprivate.blob.core.windows.net/public/Game9/q6.jpg"));
 
-            //await SendJoke(message);
+            await SendJoke(message);
 
             return $"{ANSWER} sent";
         }
@@ -55,8 +55,8 @@ namespace BerkutBot.Games.Game9.StartCommands
                     Announcement = new Announcement
                     {
                         MessageType = MessageType.Photo,
-                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game7/jokes/zakladka.jpg"),
-                        Text = "Орги раскидывают метки"
+                        ContentUrl = new Uri("https://sawevprivate.blob.core.windows.net/public/Game9/jokes/j6.jpg"),
+                        Text = "Когда просишь у оргов 6-ю подсказку за игру"
                     }
                 };
                 await _announcementScheduler.ScheduleAnnouncement(announcement);

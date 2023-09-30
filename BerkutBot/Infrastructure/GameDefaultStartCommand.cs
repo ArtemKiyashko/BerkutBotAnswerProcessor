@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace BerkutBot.Games.Game9.StartCommands
+namespace BerkutBot.Infrastructure
 {
-    public class DefaultStartCommand : IStartCommand
+    public class GameDefaultStartCommand : IStartCommand
     {
         private const string REPLY_TEXT = "Привет {0}! В этот раз тебе понадобится телефон с NFC, которым тебе придется сканировать найденные NFC-метки, а так же последняя версия Telegram!\n" +
             "Каждая метка содержит в себе ссылку (но ты ее не увидишь), которую я могу понять и <s>простить</s> прочесть.\n" +
@@ -15,9 +14,9 @@ namespace BerkutBot.Games.Game9.StartCommands
             "Обратись к организаторам и они пришлют тебе специальную ссылку - ткни на нее и я засчитаю тебе прохождение точки.";
 
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly ILogger<DefaultStartCommand> _logger;
+        private readonly ILogger<GameDefaultStartCommand> _logger;
 
-        public DefaultStartCommand(ITelegramBotClient telegramBotClient, ILogger<DefaultStartCommand> logger)
+        public GameDefaultStartCommand(ITelegramBotClient telegramBotClient, ILogger<GameDefaultStartCommand> logger)
         {
             _telegramBotClient = telegramBotClient;
             _logger = logger;

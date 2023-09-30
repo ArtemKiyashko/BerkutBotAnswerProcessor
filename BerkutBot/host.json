@@ -11,12 +11,12 @@
             "isEnabled": true
         },
         "logLevel": {
-            "BerkutBot.Games.Game9.StartCommands.Point5": "Information",
-            "BerkutBot.Games.Game9.StartCommands.Point6": "Information",
-            "BerkutBot.Games.Game9.StartCommands.Point7": "Information",
-            "BerkutBot.Games.Game9.Game8AnswerGo": "Information",
-            "BerkutBot.Games.Game9.Game8HelpCommandHandler": "Information",
-            "BerkutBot.Games.Game9.Game8StartCommandHandler": "Information"
+            "BerkutBot.Infrastructure.GameIncorrectCommandHandler": "Information",
+            "BerkutBot.Infrastructure.GameStartCommandHandler": "Information",
+            "BerkutBot.Infrastructure.GameHelpCommandHandler": "Information",
+            "BerkutBot.Infrastructure.GameDefaultStartCommand": "Information",
+            "BerkutBot.Infrastructure.GameUnknownStartCommand": "Information"
+
         }
     }
 }

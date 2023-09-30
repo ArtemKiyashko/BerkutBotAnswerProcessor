@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BerkutBot.Infrastructure;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace BerkutBot.Games.Game9
+namespace BerkutBot.Infrastructure
 {
-	public class Game9IncorrectCommandHandler : IGameAnswer
+	public class GameIncorrectCommandHandler : IGameAnswer
 	{
         private const string REPLY_TEXT = "Смахивает на бред :(";
         private readonly ITelegramBotClient _telegramBotClient;
 
-        public Game9IncorrectCommandHandler(ITelegramBotClient telegramBotClient)
+        public GameIncorrectCommandHandler(ITelegramBotClient telegramBotClient)
         {
             _telegramBotClient = telegramBotClient;
         }

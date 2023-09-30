@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
-using BerkutBot.Infrastructure;
 using Microsoft.Extensions.Logging;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 
-namespace BerkutBot.Games.Game9
+namespace BerkutBot.Infrastructure
 {
-    public class Game9HelpCommandHandler : IGameAnswer
+    public class GameHelpCommandHandler : IGameAnswer
     {
         private const string COMMAND = "/help";
         private const string ANSWER_IPHONE_BACKGROUND_TEXT = "iPhone: телефоны версии XR и выше поддерживают фоновое чтение NFC меток и не требуют дополнительной конфигурации или приложений.\n" +
@@ -24,9 +23,9 @@ namespace BerkutBot.Games.Game9
         private const string ANSWER_IPHONE_PIC3_URL = "https://sawevprivate.blob.core.windows.net/public/use-nfc-iphone-nfc-tag-reader-412x480.webp";
 
         private readonly ITelegramBotClient _telegramBotClient;
-        private readonly ILogger<Game9HelpCommandHandler> _logger;
+        private readonly ILogger<GameHelpCommandHandler> _logger;
 
-        public Game9HelpCommandHandler(ITelegramBotClient telegramBotClient, ILogger<Game9HelpCommandHandler> logger)
+        public GameHelpCommandHandler(ITelegramBotClient telegramBotClient, ILogger<GameHelpCommandHandler> logger)
         {
             _telegramBotClient = telegramBotClient;
             _logger = logger;
