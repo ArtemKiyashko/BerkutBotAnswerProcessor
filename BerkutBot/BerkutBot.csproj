@@ -46,6 +46,9 @@
     <None Remove="Games\Game9\" />
     <None Remove="Games\Game9\Infrastructure\" />
     <None Remove="Games\Game9\StartCommands\" />
+    <None Remove="Games\Game10\" />
+    <None Remove="Games\Game10\Infrastructure\" />
+    <None Remove="Games\Game10\StartCommands\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="host.json">
@@ -86,5 +89,8 @@
     <Folder Include="Games\Game9\" />
     <Folder Include="Games\Game9\Infrastructure\" />
     <Folder Include="Games\Game9\StartCommands\" />
+    <Folder Include="Games\Game10\" />
+    <Folder Include="Games\Game10\Infrastructure\" />
+    <Folder Include="Games\Game10\StartCommands\" />
   </ItemGroup>
 </Project>
