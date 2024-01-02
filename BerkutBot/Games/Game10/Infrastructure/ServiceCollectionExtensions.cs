@@ -18,6 +18,7 @@ namespace BerkutBot.Games.Game10.Infrastructure
             services.AddTransient<IGameAnswer, Game10AnswerGo>();
             services.AddTransient<IGameAnswer, Game10AnswerKiev>();
             services.AddTransient<IGameAnswer, Game10AnswerSport>();
+            services.AddTransient<IGameAnswer, Game10AnswerBonuses>();
             return services;
         }
     }
