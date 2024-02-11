@@ -50,7 +50,7 @@ namespace BerkutBot
 
             builder.Services.AddSingleton<IGameAnswerFactory, GameAnswerFactory>();
             builder.Services.AddGameCommonServices();
-            builder.Services.AddGame10Services();
+            //builder.Services.AddGame10Services();
         }
 
         static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
