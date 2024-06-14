@@ -15,8 +15,18 @@
             "BerkutBot.Infrastructure.GameStartCommandHandler": "Information",
             "BerkutBot.Infrastructure.GameHelpCommandHandler": "Information",
             "BerkutBot.Infrastructure.GameDefaultStartCommand": "Information",
-            "BerkutBot.Infrastructure.GameUnknownStartCommand": "Information"
-
+            "BerkutBot.Infrastructure.GameUnknownStartCommand": "Information",
+            "BerkutBot.Games.Game11.Game11Answer12024": "Information",
+            "BerkutBot.Games.Game11.Game11AnswerColdWater": "Information",
+            "BerkutBot.Games.Game11.Game11AnswerTestMenuOff": "Information",
+            "BerkutBot.Games.Game11.Game11AnswerTestMenuOn": "Information",
+            "BerkutBot.Games.Game11.StartCommands.Point1": "Information",
+            "BerkutBot.Games.Game11.StartCommands.Point4": "Information",
+            "BerkutBot.Games.Game11.StartCommands.Point5": "Information",
+            "BerkutBot.Games.Game11.StartCommands.Point6": "Information",
+            "BerkutBot.Games.Game11.StartCommands.Point8": "Information",
+            "BerkutBot.Games.Game11.StartCommands.TestPoint": "Information",
+            "BerkutBot.Games.Game11.StartCommands.ArQr": "Information"
         }
     }
 }
