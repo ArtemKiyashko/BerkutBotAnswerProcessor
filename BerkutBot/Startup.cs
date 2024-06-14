@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Net.Http;
 using Azure.Identity;
-using BerkutBot.Games.Game11.Infrastructure;
 using BerkutBot.Infrastructure;
 using BerkutBot.Options;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
