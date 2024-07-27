@@ -26,7 +26,8 @@ public class Game11AnswerTestMenuOff : IGameAnswer
 
     public async Task<string> Reply(Message message)
     {
-        var menuButtonCommands = new MenuButtonCommands();
+        var menuButtonCommands = new MenuButtonDefault();
+
         await _telegramBotClient.SetChatMenuButtonAsync(message.Chat.Id, menuButtonCommands);
         return "done";
     }

@@ -28,7 +28,7 @@ public class Game11AnswerTestMenuOn : IGameAnswer
     {
         var menuButtonLamp = new MenuButtonWebApp
         {
-            WebApp = new WebAppInfo { Url = "https://sawevprivate.z6.web.core.windows.net" },
+            WebApp = new WebAppInfo { Url = "https://sawevprivate.z6.web.core.windows.net/lampservice/" },
             Text = "💡"
         };
         await _telegramBotClient.SetChatMenuButtonAsync(message.Chat.Id, menuButtonLamp);
