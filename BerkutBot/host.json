@@ -16,21 +16,17 @@
             "BerkutBot.Infrastructure.GameHelpCommandHandler": "Information",
             "BerkutBot.Infrastructure.GameDefaultStartCommand": "Information",
             "BerkutBot.Infrastructure.GameUnknownStartCommand": "Information",
-            "BerkutBot.Games.Game12.Game11AnswerGo": "Information",
-            "BerkutBot.Games.Game12.Game12AnswerLenta": "Information",
-            "BerkutBot.Games.Game12.Game12AnswerRally": "Information",
-            "BerkutBot.Games.Game12.Game12AnswerWantMore": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point1": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point3": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point4": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point6": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point7": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point8": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point9": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point11": "Information",
-            "BerkutBot.Games.Game12.StartCommands.Point12": "Information",
-            "BerkutBot.Games.Game12.StartCommands.TestPoint": "Information",
-            "BerkutBot.Games.Game12.StartCommands.ArQr": "Information"
+            "BerkutBot.Games.Game13.Game13AnswerChaika": "Information",
+            "BerkutBot.Games.Game13.Game13AnswerGo": "Information",
+            "BerkutBot.Games.Game13.Game13AnswerGora": "Information",
+            "BerkutBot.Games.Game13.Game13AnswerWhiteRose": "Information",
+            "BerkutBot.Games.Game13.StartCommands.Point1": "Information",
+            "BerkutBot.Games.Game13.StartCommands.Point3": "Information",
+            "BerkutBot.Games.Game13.StartCommands.Point5": "Information",
+            "BerkutBot.Games.Game13.StartCommands.Point6": "Information",
+            "BerkutBot.Games.Game13.StartCommands.Point7": "Information",
+            "BerkutBot.Games.Game13.StartCommands.Point8": "Information",
+            "BerkutBot.Games.Game13.StartCommands.TestPoint": "Information"
         }
     }
 }

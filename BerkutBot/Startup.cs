@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using Azure.Identity;
-using BerkutBot.Games.Game12.Infrastructure;
+using BerkutBot.Games.Game13.Infrastructure;
 using BerkutBot.Infrastructure;
 using BerkutBot.Options;
 using Microsoft.Azure.Functions.Extensions.DependencyInjection;
@@ -50,7 +50,7 @@ namespace BerkutBot
 
             builder.Services.AddSingleton<IGameAnswerFactory, GameAnswerFactory>();
             builder.Services.AddGameCommonServices();
-            //builder.Services.AddGame12Services();
+            builder.Services.AddGame13Services();
         }
 
         static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy()
