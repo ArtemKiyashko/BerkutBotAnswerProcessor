@@ -52,7 +52,7 @@ namespace BerkutBot.Games.Game13
             {
                 var announcement = new AnnouncementRequest()
                 {
-                    StartTime = DateTime.UtcNow.AddSeconds(20),
+                    StartTime = DateTime.UtcNow.AddSeconds(10),
                     Chats = new List<long> { message.Chat.Id },
                     SendToAll = false,
                     Announcement = new Announcement

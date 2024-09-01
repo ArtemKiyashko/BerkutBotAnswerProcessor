@@ -55,15 +55,19 @@ namespace BerkutBot.Games.Game13
         {
             await _telegramBotClient.SendTextMessageAsync(
                 chatId: message.Chat.Id,
-                text: "Бонус 1:\nПривезти на финиш каштаны.");
+                text: "Бонус 1:\nДомашнее задание.");
 
             await _telegramBotClient.SendTextMessageAsync(
                 chatId: message.Chat.Id,
-                text: "Бонус 2:\nКоманде необходимо всем составом сфотографироваться с ...");
+                text: "Бонус 2:\nПривезти на финиш каштаны.");
 
             await _telegramBotClient.SendTextMessageAsync(
                 chatId: message.Chat.Id,
-                text: "Бонус 3:\nСпеть фрагмент песни Игоря Скляра \"Комарово\" с двумя дорожными рабочими всем составом. \nСнять на видео, прислать оргам. ");
+                text: "Бонус 3:\nКоманде необходимо всем составом сфотографироваться с Volkswagen Beetle. Не моделька, не картинка - ничего подобного. Настоящий, полноразмерный автомобиль на дороге.");
+
+            await _telegramBotClient.SendTextMessageAsync(
+                chatId: message.Chat.Id,
+                text: "Бонус 4:\nСпеть фрагмент песни Игоря Скляра \"Комарово\" с двумя дорожными рабочими всем составом. \nСнять на видео, прислать оргам.");
         }
 
         private async Task ScheduleBonus(Message message)

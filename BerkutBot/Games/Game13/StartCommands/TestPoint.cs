@@ -37,15 +37,43 @@ namespace BerkutBot.Games.Game13.StartCommands
             await _telegramBotClient.SendTextMessageAsync(
                 message.Chat.Id, "Проверочная метка принята!\nВот так и должно выглядеть нормальное взаимодествие со мной.");
 
+            await ScheduleMemes(message);
+
             return $"{ANSWER} sent";
         }
 
-        private async Task SendJoke(DateTime startDateTime, long chatId, MessageType messageType, string contentUrl, string text = null)
+
+        private async Task ScheduleMemes(Message message)
         {
+            var todayEvening = new DateTime(DateTime.Today.Year, DateTime.Today.Month, DateTime.Today.Day, 17, 30, 00, DateTimeKind.Utc);
             try
             {
-                var announcementRequest = CreateAnnouncementRequest(startDateTime, chatId, messageType, contentUrl);
-                await _announcementScheduler.ScheduleAnnouncement(announcementRequest);
+                var announcement = CreateAnnouncement(message, todayEvening, MessageType.Photo, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme1.jpg");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(30), MessageType.Video, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme2.mp4");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(60), MessageType.Photo, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme3.jpg");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(90), MessageType.Video, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme4.mp4");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(120), MessageType.Photo, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme5.jpg");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(150), MessageType.Video, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme6.mp4");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(180), MessageType.Photo, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme7.jpg");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(210), MessageType.Photo, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme8.jpg");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
+
+                announcement = CreateAnnouncement(message, todayEvening.AddMinutes(240), MessageType.Photo, "https://sawevprivate.blob.core.windows.net/public/Game13/memes/meme9.jpg");
+                await _announcementScheduler.ScheduleAnnouncement(announcement);
             }
             catch (Exception ex)
             {
@@ -53,21 +81,19 @@ namespace BerkutBot.Games.Game13.StartCommands
             }
         }
 
-        private static AnnouncementRequest CreateAnnouncementRequest(DateTime startDateTime, long chatId, MessageType messageType, string contentUrl, string text = null)
-        =>
-            new()
+        private static AnnouncementRequest CreateAnnouncement(Message message, DateTime todayEvening, MessageType messageType, string contentUrl)
+        => new()
+        {
+            StartTime = todayEvening,
+            Chats = new List<long> { message.Chat.Id },
+            SendToAll = false,
+            Announcement = new Announcement
             {
-                StartTime = startDateTime,
-                Chats = new List<long> { chatId },
-                SendToAll = false,
-                Announcement = new Announcement
-                {
-                    MessageType = messageType,
-                    ContentUrl = new Uri(contentUrl),
-                    Text = text
-                }
-            };
-        
+                MessageType = messageType,
+                ContentUrl = new Uri(contentUrl)
+            }
+        };
+
     }
 }
 

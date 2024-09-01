@@ -15,7 +15,7 @@ namespace BerkutBot.Games.Game13.StartCommands
 	{
         private const string ANSWER = "Point6_6c07f11e-dbf0-4830-ac4e-322611fb287c";
         private const string PUBLIC_CONTAINER = "public";
-        private const string BLOB_PATH = "Game13/point6.mp3";
+        private const string BLOB_PATH = "Game13/point6_1.mp3";
 
         private readonly ITelegramBotClient _telegramBotClient;
         private readonly ILogger<Point6> _logger;
